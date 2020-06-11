@@ -4,7 +4,12 @@ using System.Text;
 
 namespace gamerpsls
 {
-    class playerTwo
+    public class Player
     {
+
+
+
+
+
     }
 }

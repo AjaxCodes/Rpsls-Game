@@ -4,7 +4,15 @@ using System.Text;
 
 namespace gamerpsls
 {
-    class computer
+    public class Computer : Player
     {
+        // Member Variables
+        
+        // Constructor
+        
+        // Member Method
+
+        //Random class
+
     }
 }
