@@ -7,12 +7,21 @@ namespace gamerpsls
     public class Computer : Player
     {
         // Member Variables
-        
+
         // Constructor
-        
+        public Computer()
+        {
+            gestures = new List<string>();
+            //Add gestures
+        }
         // Member Method
 
-        //Random class
+        public override void ChooseGesture()
+        {
+            //Random class
+            
+        }
+
 
     }
 }

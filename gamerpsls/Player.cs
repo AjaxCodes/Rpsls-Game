@@ -4,34 +4,27 @@ using System.Text;
 
 namespace gamerpsls
 {
-    public class Player
+    public abstract class Player
     {
         //member variables (has a)
-        string player1;
-        
-        string player2;
-        string human;
-        string computer;
-
-
+        public string gesture;
+        public string name;
+        public int score;
+        public List<string> gestures;
 
 
         public Player() 
         {
 
-
+            
             
 
 
 
 
         }
-        //public abstract void ChooseGesture();     //(virtual if child)
-        //{
-
-
-
-       // }
+        public abstract void ChooseGesture();     //(virtual if child)
+        
 
 
 
@@ -40,5 +33,5 @@ namespace gamerpsls
 
 
 
-    }
+}
 }

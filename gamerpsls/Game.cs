@@ -8,38 +8,123 @@ namespace gamerpsls
     {
         // Member Variables
         Player player1;
-        string player2;
+        Player player2;
 
        
          public Game()
          {
-           player1 = new Player();
-           player1 = new Human();
-           //player1.Choosegesture();
+           //player1 = new Player();
+           //player2 = new Human();
+           //player2 = new Player(Human, Computer); ** ask michael about this
+           
+            //player1.Choosegesture();
            //player2.ChooseGesture();           // Errors are till you define in other classes
 
          }
+        
+        public void RunGame()
+        {
+            //Display Rules method call
+            //CreatePlayers();
+            //Player objects call ChooseGesture()
+            //CompareGestures() method gets called
+        }
+        //method responsible for creating players
+        public void CreatePlayers()
+        {
+            Console.WriteLine("choose game mode");
+            Console.WriteLine("1 for human v ai");
+            Console.WriteLine("2 for human v human");
+
+            string userInput = Console.ReadLine();
+
+            if (userInput == "1")
+            {
+                player1 = new Human();
+                player2 = new Computer();
+
+
+            }
+            else if(userInput == "2")
+            {
+
+                player1 = new Human();
+                player2 = new Human();
+
+            }
+        }
+        //compare gestures method
+        public void CompareGestures()
+        {
+            if (player1.gesture == "rock")
+            {
+                //player1 > ChooseGesture "Scissors", "Lizard";
+                if (player2.gesture == "scissors" || player2.gesture == "lizard")
+                {
+                    player1.score++;
+                }
+            }
+            else if (player2.gesture == "rock")
+            {
+                //Re do round
+            }
+            else if (player1.gesture == "paper")
+            {
+                if (player2.gesture == "rock" || player2.gesture == "spock")
+                {
+                    player1.score++;
+                }
+            }   else if (player2.gesture == "paper") 
+            {
+                //Re do round
+            }
+            else if (player1.gesture == "scissors")
+            {
+                if (player2.gesture == "paper" || player2.gesture == "lizard")
+                {
+                    player1.score++;
+                }
+            }
+            else if (player2.gesture == "scissors")
+            {
+                //Re do round
+            }
+            else if (player1.gesture == "lizard")
+            {
+                if (player2.gesture == "spock" || player2.gesture == "paper")
+                {
+                    player1.score++;
+                }
+            }
+            else if (player2.gesture == "lizard")
+            {
+                //Re do round
+            }
+            else if (player1.gesture == "spock")
+            {
+                if (player2.gesture == "rock" || player2.gesture == "scissors")
+                {
+                    player1.score++;
+                }
+            }
+            else if (player2.gesture == "spock")
+            {
+               // player1.player2.reroll; 
+            }
+
+
+
+
+
+
+        }
+
 
         public void DisplayRules() 
         {
             Console.WriteLine("The rules are");
 
-            Console.WriteLine("choose game mode");
-            Console.WriteLine("1 for human v ai");
-            Console.WriteLine("2 for human v human");
-
-            //if (userInput == "1")
-            {
-                //(make p2 an ai);
-
-
-            }
-            //else (userInput == "2");
-            {
-
-                //make p2 a human;        //(   swap values   )
-
-            }
+            
 
             //if (rock)
             //{
