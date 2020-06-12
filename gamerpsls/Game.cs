@@ -6,35 +6,34 @@ namespace gamerpsls
 {
     public class Game
     {
-        // Member Variables
+        
         Player player1;
         Player player2;
 
-       
-         public Game()
-         {
-           //player1 = new Player();
-           //player2 = new Human();
-           //player2 = new Player(Human, Computer); ** ask michael about this
-           
-            //player1.Choosegesture();
-           //player2.ChooseGesture();           // Errors are till you define in other classes
 
-         }
-        
+        public Game()
+        {
+
+
+        }
+
         public void RunGame()
         {
-            //Display Rules method call
-            //CreatePlayers();
-            //Player objects call ChooseGesture()
-            //CompareGestures() method gets called
+            
+            DisplayRules();
+            CreatePlayers();
+            player1.ChooseGesture();
+            player2.ChooseGesture();
+            CompareGestures();
         }
-        //method responsible for creating players
+        
         public void CreatePlayers()
         {
             Console.WriteLine("choose game mode");
-            Console.WriteLine("1 for human v ai");
+            Console.WriteLine("1 for human v computer");
+            Console.ReadLine();
             Console.WriteLine("2 for human v human");
+            Console.ReadLine();
 
             string userInput = Console.ReadLine();
 
@@ -45,7 +44,7 @@ namespace gamerpsls
 
 
             }
-            else if(userInput == "2")
+            else if (userInput == "2")
             {
 
                 player1 = new Human();
@@ -53,20 +52,16 @@ namespace gamerpsls
 
             }
         }
-        //compare gestures method
+
         public void CompareGestures()
         {
             if (player1.gesture == "rock")
             {
-                //player1 > ChooseGesture "Scissors", "Lizard";
+
                 if (player2.gesture == "scissors" || player2.gesture == "lizard")
                 {
                     player1.score++;
                 }
-            }
-            else if (player2.gesture == "rock")
-            {
-                //Re do round
             }
             else if (player1.gesture == "paper")
             {
@@ -74,9 +69,6 @@ namespace gamerpsls
                 {
                     player1.score++;
                 }
-            }   else if (player2.gesture == "paper") 
-            {
-                //Re do round
             }
             else if (player1.gesture == "scissors")
             {
@@ -85,20 +77,12 @@ namespace gamerpsls
                     player1.score++;
                 }
             }
-            else if (player2.gesture == "scissors")
-            {
-                //Re do round
-            }
             else if (player1.gesture == "lizard")
             {
                 if (player2.gesture == "spock" || player2.gesture == "paper")
                 {
                     player1.score++;
                 }
-            }
-            else if (player2.gesture == "lizard")
-            {
-                //Re do round
             }
             else if (player1.gesture == "spock")
             {
@@ -107,68 +91,39 @@ namespace gamerpsls
                     player1.score++;
                 }
             }
-            else if (player2.gesture == "spock")
+            else if (player1.gesture == player2.gesture)
             {
-               // player1.player2.reroll; 
+                Console.WriteLine("Tie");
             }
-
-
-
-
-
-
+            else
+            {
+                player2.score++;
+            }
         }
 
 
-        public void DisplayRules() 
+        public void DisplayRules()
         {
             Console.WriteLine("The rules are");
+            Console.WriteLine("Each player has a turn. \n" +
+                "Player 1 then Player 2. \n" +
+                "whichever players chosen gesture has a winning value will recieve a point. \n" +
+                " The first player to score 2 points wins \n" +
+                "gestures are as follows. " +
+                "Rock = 0 . paper = 1  . scissors = 2 . lizard = 3. spock = 4. \n" +
+                "0 Rock beats scisors and lizard \n" +
+                "1 paper beats rock and spock \n "+
+                "2 scissors beats paper and lizard \n" +
+                "3 lizard beats spock and paper \n" +
+                "4 spock beats rock and scissors");
 
-            
 
-            //if (rock)
-            //{
-                 // > Scissors, lizard
-
-            //}
-            //else if (paper)
-            //{
-                    // > rock, spock
-            //}
-            //else if (scissors)
-            //{
-                    // > paper, lizard
-            //}
-            //else if (lizard)
-            //{
-                    // >spock , paper
-            //}
-            //else if (p1 = rock, p2 = rock)
-            //{
-                    // tie, choose again
-            //}
-            //else if (p1 = paper, p2 = paper)
-            //{
-                    // tie, choose again
-            //}//else if (p1 = scissors, p2 = scissors)
-            //{
-                    // tie, choose again
-            //}//else if (p1 = lizard, p2 = lizard)
-            //{
-                    // tie, choose again
-            //}//else if (p1 = spock, p2 = spock)
-            //{
-                    // tie, choose again
-            //}
 
         }
 
 
 
-
-
-        // Constructor
-
-        // Member Method
     }
+
+        
 }
