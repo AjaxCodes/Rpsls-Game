@@ -6,7 +6,9 @@ namespace gamerpsls
 {
     public class Player
     {
+        //member variables (has a)
         string player1;
+        
         string player2;
         string human;
         string computer;

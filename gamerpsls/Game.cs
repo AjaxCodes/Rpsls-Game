@@ -7,18 +7,18 @@ namespace gamerpsls
     public class Game
     {
         // Member Variables
-        string player1;
+        Player player1;
         string player2;
 
        
          public Game()
          {
-           //player1 = new Player();
-           //player1 = new Human();
+           player1 = new Player();
+           player1 = new Human();
            //player1.Choosegesture();
            //player2.ChooseGesture();           // Errors are till you define in other classes
 
-        }
+         }
 
         public void DisplayRules() 
         {
@@ -41,10 +41,43 @@ namespace gamerpsls
 
             }
 
+            //if (rock)
+            //{
+                 // > Scissors, lizard
 
+            //}
+            //else if (paper)
+            //{
+                    // > rock, spock
+            //}
+            //else if (scissors)
+            //{
+                    // > paper, lizard
+            //}
+            //else if (lizard)
+            //{
+                    // >spock , paper
+            //}
+            //else if (p1 = rock, p2 = rock)
+            //{
+                    // tie, choose again
+            //}
+            //else if (p1 = paper, p2 = paper)
+            //{
+                    // tie, choose again
+            //}//else if (p1 = scissors, p2 = scissors)
+            //{
+                    // tie, choose again
+            //}//else if (p1 = lizard, p2 = lizard)
+            //{
+                    // tie, choose again
+            //}//else if (p1 = spock, p2 = spock)
+            //{
+                    // tie, choose again
+            //}
 
         }
-           
+
 
 
 
