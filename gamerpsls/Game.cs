@@ -6,20 +6,16 @@ namespace gamerpsls
 {
     public class Game
     {
-        
         Player player1;
         Player player2;
-
-
         public Game()
         {
 
 
         }
-
         public void RunGame()
         {
-            
+            RunGame();
             DisplayRules();
             CreatePlayers();
             player1.ChooseGesture();
@@ -41,23 +37,17 @@ namespace gamerpsls
             {
                 player1 = new Human();
                 player2 = new Computer();
-
-
             }
             else if (userInput == "2")
             {
-
                 player1 = new Human();
                 player2 = new Human();
-
             }
         }
-
         public void CompareGestures()
         {
             if (player1.gesture == "rock")
             {
-
                 if (player2.gesture == "scissors" || player2.gesture == "lizard")
                 {
                     player1.score++;
@@ -100,8 +90,6 @@ namespace gamerpsls
                 player2.score++;
             }
         }
-
-
         public void DisplayRules()
         {
             Console.WriteLine("The rules are");
@@ -116,9 +104,6 @@ namespace gamerpsls
                 "2 scissors beats paper and lizard \n" +
                 "3 lizard beats spock and paper \n" +
                 "4 spock beats rock and scissors");
-
-
-
         }
 
 

@@ -6,19 +6,26 @@ namespace gamerpsls
 {
     public class Computer : Player
     {
-        // Member Variables
+        // Member Variables**** do
 
         // Constructor
         public Computer()
         {
             gestures = new List<string>();
-            //Add gestures
+            void PopulateGestures()   // human and computer should have this as well with out adding?
+            {
+                this.gestures.Add("Rock");
+                this.gestures.Add("Paper");
+                this.gestures.Add("Scissors");
+                this.gestures.Add("Lizzard");
+                this.gestures.Add("Spock");
+            }
         }
         // Member Method
 
         public override void ChooseGesture()
         {
-            //Random class
+            //Random class*** do
             
         }
 
