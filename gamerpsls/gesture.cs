@@ -6,16 +6,11 @@ namespace gamerpsls
 {
     public class Gesture
     {
+        // probably deleting entirely
         
-        //Gesture Gesture;
-        public Gesture()
+        public Gesture( string gesture, double value)
         {
-            //Gesture = new Gesture();    // PROBABLY DONT NEED THIS AT ALL  
-            // missing ROCk;
-            //Scissors = new scissors(2);
-            //Paper = new paper(3);
-            //Spock = new spock(5);
-            //Lizard = new lizard(6);
+            
 
         }
 

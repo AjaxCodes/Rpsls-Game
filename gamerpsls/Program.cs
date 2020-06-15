@@ -4,9 +4,9 @@ namespace gamerpsls
 {
     class Program
     {
-       // Game game = new Game();
-       // Game.DisplayRules();
-       // Game.RunGame();
+        Game game = new Game();
+       //Game.DisplayRules();
+      // Game.RunGame();
 
 
     }
