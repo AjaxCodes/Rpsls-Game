@@ -17,22 +17,25 @@ namespace gamerpsls
         {
             DisplayRules();
             CreatePlayers();
-            CreateScoring();
-            player1.ChooseGesture();
-            player2.ChooseGesture();
-            CompareGestures();
             
-            
+           
+            while (player1.score < 2 && player2.score < 2)
+            {
+                player1.ChooseGesture();
+                player2.ChooseGesture();
+                CompareGestures();
+
+            }            
 
 
         }
         public void CreatePlayers()
         {
             Console.WriteLine("choose game mode");
-            Console.WriteLine("1 for human v computer");
-            Console.ReadLine();
+            Console.WriteLine("1 for human v computer, if you want 2 human players enter 2");
+            //Console.ReadLine();
             Console.WriteLine("2 for human v human");
-            Console.ReadLine();
+            //Console.ReadLine();
             string userInput = Console.ReadLine();
 
             if (userInput == "1")
@@ -48,11 +51,19 @@ namespace gamerpsls
         }
         public void CompareGestures()
         {
-            if (player1.gesture == "rock")
+            if (player1.gesture == player2.gesture)
+            {
+                Console.WriteLine("Tie");
+            }
+            else if (player1.gesture == "rock")
             {
                 if (player2.gesture == "scissors" || player2.gesture == "lizard")
                 {
                     player1.score++;
+                }
+                else
+                {
+                    player2.score++;
                 }
             }
             else if (player1.gesture == "paper")
@@ -61,12 +72,20 @@ namespace gamerpsls
                 {
                     player1.score++;
                 }
+                else 
+                {
+                    player2.score++;
+                } 
             }
             else if (player1.gesture == "scissors")
             {
                 if (player2.gesture == "paper" || player2.gesture == "lizard")
                 {
                     player1.score++;
+                }
+                else
+                {
+                    player2.score++;
                 }
             }
             else if (player1.gesture == "lizard")
@@ -75,6 +94,10 @@ namespace gamerpsls
                 {
                     player1.score++;
                 }
+                else
+                {
+                    player2.score++;
+                }
             }
             else if (player1.gesture == "spock")
             {
@@ -82,14 +105,10 @@ namespace gamerpsls
                 {
                     player1.score++;
                 }
-            }
-            else if (player1.gesture == player2.gesture)
-            {
-                Console.WriteLine("Tie");
-            }
-            else
-            {
-                player2.score++;
+                else
+                {
+                    player2.score++;
+                }
             }
         }
         public void DisplayRules()
@@ -109,11 +128,11 @@ namespace gamerpsls
         }
         public void CreateScoring() 
         {
-            if (player1.score < 2 || player2.score < 2)
+            if (player1.score > 2 || player2.score > 2)
             {
                 Console.WriteLine("Game Over");
             }
-            else if (player1.score > 2 || player2.score > 2) 
+            else if (player1.score < 2 || player2.score < 2) 
             {
                 player1.ChooseGesture();
             }
