@@ -11,36 +11,20 @@ namespace gamerpsls
         public string gesture;
         public string name;
         public int score;
-        int Rock;
-        string scissors;                            
-        string paper;
-        string spock;
-        string lizard;
-        int gestureNumber;
         public List<string> gestures; 
-        public Player() // parent class
+        public Player() 
         {
-            void PopulateGestures(string name, int gestureNumber) // ask michael
-            {
-                this.gestures.Add("Rock");
-                this.gestures.Add("Paper");
-                this.gestures.Add("Scissors");
-                this.gestures.Add("Lizzard");
-                this.gestures.Add("Spock"); // needs override method?
-            }
+          PopulateGestures();
         }
-        public void ChooseGesture() 
+        public abstract void ChooseGesture();
+        public void PopulateGestures() 
         {
-            Console.ReadLine();
-        }     
-        
-        
-
-
-
-
-
-
-
+            gestures = new List<string>();
+            this.gestures.Add("Rock");
+            this.gestures.Add("Paper");
+            this.gestures.Add("Scissors");
+            this.gestures.Add("Lizzard");
+            this.gestures.Add("Spock");
+        }
     }
 }

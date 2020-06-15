@@ -4,10 +4,19 @@ namespace gamerpsls
 {
     class Program
     {
-        Game game = new Game();
-       //Game.DisplayRules();
-      // Game.RunGame();
+        static void Main(string[] args) 
+        {
+            Game game = new Game();
+            game.RunGame();
+        }
+     
+
+           
 
 
     }
+
+
+
 }
+

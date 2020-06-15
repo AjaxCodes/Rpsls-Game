@@ -15,14 +15,13 @@ namespace gamerpsls
         }
         public void RunGame()
         {
-            RunGame();
             DisplayRules();
             CreatePlayers();
+            CreateScoring();
             player1.ChooseGesture();
             player2.ChooseGesture();
             CompareGestures();
         }
-        
         public void CreatePlayers()
         {
             Console.WriteLine("choose game mode");
@@ -30,7 +29,6 @@ namespace gamerpsls
             Console.ReadLine();
             Console.WriteLine("2 for human v human");
             Console.ReadLine();
-
             string userInput = Console.ReadLine();
 
             if (userInput == "1")
@@ -98,12 +96,19 @@ namespace gamerpsls
                 "whichever players chosen gesture has a winning value will recieve a point. \n" +
                 " The first player to score 2 points wins \n" +
                 "gestures are as follows. " +
-                "Rock = 0 . paper = 1  . scissors = 2 . lizard = 3. spock = 4. \n" +
-                "0 Rock beats scisors and lizard \n" +
-                "1 paper beats rock and spock \n "+
-                "2 scissors beats paper and lizard \n" +
-                "3 lizard beats spock and paper \n" +
-                "4 spock beats rock and scissors");
+                "Rock. Paper. Scissors. Lizard. Spock. \n" +
+                "0 Rock beats scisors and lizard. \n" +
+                "1 paper beats rock and spock. \n "+
+                "2 scissors beats paper and lizard. \n" +
+                "3 lizard beats spock and paper. \n" +
+                "4 spock beats rock and scissors.");
+        }
+        public void CreateScoring() 
+        {
+            if (player1.score < 2 || player2.score < 2) 
+            {
+                Console.WriteLine("Game Over");
+            }
         }
 
 
