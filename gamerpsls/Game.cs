@@ -21,6 +21,10 @@ namespace gamerpsls
             player1.ChooseGesture();
             player2.ChooseGesture();
             CompareGestures();
+            
+            
+
+
         }
         public void CreatePlayers()
         {
@@ -105,11 +109,18 @@ namespace gamerpsls
         }
         public void CreateScoring() 
         {
-            if (player1.score < 2 || player2.score < 2) 
+            if (player1.score < 2 || player2.score < 2)
             {
                 Console.WriteLine("Game Over");
             }
-        }
+            else if (player1.score > 2 || player2.score > 2) 
+            {
+                player1.ChooseGesture();
+            }
+        
+        
+        } 
+
 
 
 

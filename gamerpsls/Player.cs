@@ -7,7 +7,6 @@ namespace gamerpsls
 {
     public abstract class Player
     {
-        //member variables (has a)
         public string gesture;
         public string name;
         public int score;
